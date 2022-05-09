@@ -33,11 +33,8 @@ class DynamicArray():
         self.size += 1
             
     def delete(self, index):
-        print(self.data)
         for i in range(index, self.size+1):
-            print(i)
             self.data[i] = self.data[i+1]
-            print(self.data)
             
         self.size -= 1
 
