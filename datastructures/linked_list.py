@@ -10,6 +10,7 @@ class LinkedList():
     def __init__(self):
         self.head = None
         self.size = 0
+        self.peek = None
 
     def add_front(self, data):
 
@@ -22,6 +23,7 @@ class LinkedList():
             self.head = new_node
 
         self.size += 1
+        self.peek = new_node.data
 
     def add_back(self, data):
 
@@ -38,6 +40,7 @@ class LinkedList():
             current.next = new_node
 
         self.size += 1
+        self.peek = self.head.data
 
     def delete(self, value):
         if not self.head:
@@ -46,6 +49,7 @@ class LinkedList():
         if self.head.data == value:
             self.head = self.head.next
             self.size -= 1
+            self.peek = self.head.data if self.head else None
             return
 
         current = self.head
@@ -82,6 +86,10 @@ class LinkedList():
     def clear(self):
         self.head = None
         self.size = 0
+        self.peek = None
+
+    def is_empty(self):
+        return self.size == 0
 
     def print(self):
         current = self.head

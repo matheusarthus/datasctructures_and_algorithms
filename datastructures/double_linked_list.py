@@ -12,6 +12,7 @@ class DoubleLinkedList():
         self.head = None
         self.tail = None
         self.size = 0
+        self.peek = None
 
     def add_front(self, data):
 
@@ -26,6 +27,7 @@ class DoubleLinkedList():
             self.head = new_node
 
         self.size += 1
+        self.peek = new_node.data
 
     def add_back(self, data):
 
@@ -40,6 +42,7 @@ class DoubleLinkedList():
             self.tail = new_node
 
         self.size += 1
+        self.peek = self.head.data if self.head else None
 
     def delete(self, value):
         if not self.head:
@@ -48,6 +51,7 @@ class DoubleLinkedList():
         if self.head.data == value:
             self.head = self.head.next
             self.size -= 1
+            self.peek = self.head.data if self.head else None
             return
 
         if self.tail.data == value:
@@ -86,6 +90,10 @@ class DoubleLinkedList():
         self.head = None
         self.tail = None
         self.size = 0
+        self.peek = None
+
+    def is_empty(self):
+        return self.size == 0
 
     def print(self):
         current = self.head
