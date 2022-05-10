@@ -82,3 +82,10 @@ class LinkedList():
     def clear(self):
         self.head = None
         self.size = 0
+
+    def print(self):
+        current = self.head
+
+        while current:
+            print(f'data: {current.data}, next: {current.next}')
+            current = current.next
