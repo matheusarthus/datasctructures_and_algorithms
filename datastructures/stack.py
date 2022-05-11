@@ -8,6 +8,6 @@ class Stack(LinkedList):
     def pop(self):
         current = self.head
 
-        self.delete(current.data)
+        self.delete(self.head.data)
 
         return current.data

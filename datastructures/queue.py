@@ -6,5 +6,9 @@ class Queue(DoubleLinkedList):
         self.add_back(value)
 
     def remove(self):
+        current = self.head
+
         self.delete(self.head.data)
+
+        return current.data
         

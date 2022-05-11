@@ -52,6 +52,10 @@ class DoubleLinkedList():
             self.head = self.head.next
             self.size -= 1
             self.peek = self.head.data if self.head else None
+
+            if not self.head:
+                self.tail = None
+
             return
 
         if self.tail.data == value:

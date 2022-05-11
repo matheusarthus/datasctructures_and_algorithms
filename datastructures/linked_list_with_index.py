@@ -73,7 +73,7 @@ class LinkedListWithIndex():
 
             current = current.next
             
-        raise Exception("Value not found.")
+        return None
 
     def get_first(self):
         if not self.head:
