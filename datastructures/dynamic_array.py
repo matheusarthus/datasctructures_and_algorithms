@@ -56,3 +56,7 @@ class DynamicArray():
         
         self.capacity = new_capacity
         self.data = new_data
+
+    def print(self):
+        for item in self.data:
+            print(item)
